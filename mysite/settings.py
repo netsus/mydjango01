@@ -31,14 +31,18 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    # django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # third apps
     "django_extensions",
-    "blog",
+    "django_bootstrap5",
+    # local apps
+    "blog",  # "blog.apps.BlogConfig" 동일
     "catube",
 ]
 

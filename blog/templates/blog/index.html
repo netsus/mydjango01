@@ -1,24 +1,14 @@
-<!doctype html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Python Django Blog</title>
-</head>
-<body>
+{% extends "blog/base.html" %}
 
-    <h1>Post List</h1>
-    <div>
-        {% for post in post_list %}
+{% block content %}
+    {% for post in post_list %}
             <div>
-                {{ post.id }}, {{ post.title }}
+                {# TODO: url reverse 기능을 쓰도록 수정해야 한다.#}
+                <a href="/blog/{{ post.id }}/">
+                    {{ post.id }}, {{ post.title }}
+                </a>
             </div>
-
-        {% endfor %}
-    </div>
-
-
-</body>
-</html>
+    {% endfor %}
+    <hr>
+    <a href="/blog/new/">새 글 쓰기</a>
+{% endblock %}

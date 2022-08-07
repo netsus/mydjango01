@@ -1,16 +1,10 @@
-<!doctype html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Python Django Blog</title>
-</head>
-<body>
-    <h1>Post Detail : {{ post.title }}</h1>
+{% extends "blog/base.html" %}
 
+{% block content %}
+    <h2>Post Detail : {{ post.title }}</h2>
         {{ post.content }}
+    <hr/>
+    <a href="/blog/">목록으로</a>
+{% endblock %}
 
-</body>
-</html>
+
