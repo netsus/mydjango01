@@ -22,9 +22,7 @@ from blog import views as blog_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("blog/", blog_views.index),
-    path("blog/<int:pk>/", blog_views.post_detail),
-    path("blog/new/", blog_views.post_new),
+    path("blog/", include("blog.urls")),
     path("accounts/", include("accounts.urls")),
     path("", RedirectView.as_view(url="/blog/"), name="root"),
 ]
