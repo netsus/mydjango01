@@ -16,6 +16,14 @@
     <div class="container">
         <!-- 헤더 -->
         <h1>Django is Amazing!</h1>
+            <p>
+            {% if user.is_authenticated  %}
+                Logged by {{ user }}<br>
+                <a href="/accounts/logout/">로그아웃</a>
+            {% else %}
+                <a href="/accounts/login/">로그인</a>
+            {% endif %}
+            </p>
 
         <!-- 콘텐츠 -->
         {% block content %}
