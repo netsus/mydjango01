@@ -7,8 +7,8 @@ from blog.models import Post
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    if not request.user.is_authenticated:
-        return redirect("/accounts/login/")
+    # if not request.user.is_authenticated:
+    #     return redirect("/accounts/login/")
     qs = Post.objects.all()
     return render(request, "blog/index.html", context={"post_list": qs})
 

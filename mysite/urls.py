@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+
 from blog import views as blog_views
 
 
@@ -24,4 +26,5 @@ urlpatterns = [
     path("blog/<int:pk>/", blog_views.post_detail),
     path("blog/new/", blog_views.post_new),
     path("accounts/", include("accounts.urls")),
+    path("", RedirectView.as_view(url="/blog/"), name="root"),
 ]
