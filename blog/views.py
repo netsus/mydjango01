@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from blog.forms import PostForm
 from blog.models import Post
 
